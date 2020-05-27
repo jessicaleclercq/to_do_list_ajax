@@ -1,2 +1,20 @@
-<h1>Emails#index</h1>
-<p>Find me in app/views/emails/index.html.erb</p>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Email ID</th>
+      <th scope="col">Liste des emails</th>
+      <th scope="col">Email selectionné</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @emails.each do |email|  %>
+    <tr>
+      <th scope="row"><%= email.id %></th>
+          <td><%= email.objet %></td>
+        <% end %>
+    </tr>
+  </tbody>
+</table>
+
+
+     
