@@ -1,3 +1,4 @@
+
 Rails.application.routes.draw do
   root to: "emails#index"
   devise_for :users
