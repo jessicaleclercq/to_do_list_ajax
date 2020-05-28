@@ -1,16 +1,20 @@
 
-
-<h1 class="text-center">Your Email Inbox</h1>
+<!--pourquoi est-ce que ma console affiche DevTools failed to load SourceMap?-->
+<h1 class="text-center">Your Gmail-like Inbox</h1>
 
 <hr>
-  <%= button_to "Receive an email", emails_path, data:{method: "POST"}, class:"btn btn-primary mb-2", remote: true %>
-  <div class="row">
-    <div class="col-4">
+<div class="ml-4 mb-3">
+
+<!--pourquoi est-ce que ce bouton ne génère pas de nouveau email?-->
+  <%= button_to "Receive an email", emails_path, data:{method: "POST"}, class:"btn btn-dark", remote: true %>
+</div>  
+  <div class="row ml-2">
+    <div class="rounded-lg col-4">
       <table class="table">
         <thead class="thead-primary">
         </thead>
         <tbody id="mail_list" class="list-group">  
-        <b class="list-group-item text-white bg-primary">Emails</b>
+        <b class="list-group-item text-white  bg-dark">Emails</b>
             <% @emails.order(:created_at).each do |email| %>
             <tr>
               <%= render 'email', email: email %>
@@ -19,9 +23,9 @@
         </tbody>
       </table>
     </div>
-    <div class="col-8 border">
+    <div class="rounded-lg col-8">
       <table class="table">
-        <thead class="thead text-white bg-primary">
+        <thead class="thead text-white bg-dark">
           <tr>
             <th scope="col">Content</th>
           </tr>

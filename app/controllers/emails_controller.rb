@@ -14,7 +14,7 @@ class EmailsController < ApplicationController
   end
 
   def create
-    @email = Email.new(objet: Faker::Book.title, body: Faker::Lorem.paragraph)
+    @email = Email.create(object: Faker::Hipster.word, body: Faker::Hipster.paragraph)
 
     if @email.save
       respond_to do |format|
